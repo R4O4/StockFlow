@@ -1,0 +1,15 @@
+{
+  "name": "stockflow",
+  "version": "1.0.0",
+  "description": "Stock manager",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch view/src/sass/main.scss:view/src/css/style.css"
+  },
+  "author": "R4 Tech Solutions",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.70.0"
+  }
+}
