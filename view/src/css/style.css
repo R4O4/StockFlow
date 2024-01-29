@@ -1,3 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;0,9..40,1000;1,9..40,100;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700;1,9..40,800;1,9..40,900;1,9..40,1000&display=swap");
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 
+* {
+  font-family: "SF-Pro", "DM Sans", sans-serif;
+}
+
+@font-face {
+  font-family: "SF Pro";
+  src: local("SF Pro"), url("SF-Pro.ttf") format("truetype");
+}
+.login-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.login-content .login-container {
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 30px;
+  padding-top: 10px;
+}
+.login-content .login-container .login-logo {
+  width: 200px;
+  object-fit: cover;
+}
+.login-content .login-container h1 {
+  color: #FFF;
+  margin: 0;
+  font-size: 2em;
+}
+.login-content .login-container p {
+  width: 70%;
+  color: rgba(255, 255, 255, 0.37);
+  text-align: center;
+  margin: 0 0 20px 0;
+}
+.login-content .login-container .login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.login-content .login-container .login-form input[type=text], .login-content .login-container .login-form input[type=password] {
+  display: flex;
+  width: 295px;
+  height: 44px;
+  padding: 0 20px;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 12px;
+  border: none;
+  background: rgba(26, 26, 26, 0.22);
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 420;
+  line-height: 22px;
+  color: rgba(255, 255, 255, 0.37);
+  background-blend-mode: luminosity, color-burn;
+  box-shadow: 1px 1.5px 4px 0px rgba(0, 0, 0, 0.1) inset, 1px 1.5px 4px 0px rgba(0, 0, 0, 0.08) inset, 0px -0.5px 1px 0px rgba(255, 255, 255, 0.25) inset, 0px -0.5px 1px 0px rgba(255, 255, 255, 0.3) inset;
+}
+.login-content .login-container .login-form input[type=text]::placeholder, .login-content .login-container .login-form input[type=password]::placeholder {
+  color: rgba(255, 255, 255, 0.37);
+}
+.login-content .login-container .login-form input[type=password] {
+  font-size: 20px;
+  letter-spacing: 5px;
+}
+.login-content .login-container .login-form input[type=password]::placeholder {
+  letter-spacing: initial;
+  font-size: 17px;
+}
+.login-content .login-container .login-form input[type=submit] {
+  display: flex;
+  width: 295px;
+  height: 44px;
+  padding: 0px 20px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.96);
+  border: none;
+}
+
+.glass {
+  border-radius: 46px;
+  border: 1px solid var(--windows-stroke-glass-specular, rgba(255, 255, 255, 0.4));
+  background: var(--Windows-Glass, rgba(128, 128, 128, 0.3));
+  background-blend-mode: luminosity;
+  /* Blur */
+  backdrop-filter: blur(50px);
+}
 
 /*# sourceMappingURL=style.css.map */

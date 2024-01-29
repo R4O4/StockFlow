@@ -1,0 +1,79 @@
+
+.login-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+  .login-container {
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 30px;
+    padding-top: 10px;
+    .login-logo {
+      width: 200px;
+      object-fit: cover;
+    }
+    h1 {
+      color: #FFF;
+      margin: 0;
+      font-size: 2em;
+    }
+    p {
+      width: 70%;
+      color: rgba(255, 255, 255, 0.37);
+      text-align: center;
+      margin: 0 0 20px 0;
+    }
+    .login-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      input[type=text], input[type=password] {
+        display: flex;
+        width: 295px;
+        height: 44px;
+        padding: 0 20px;
+        align-items: center;
+        flex-shrink: 0;
+        border-radius: 12px;
+        border: none;
+        background: rgb(26 26 26 / 22%);
+        font-size: 17px;
+        font-style: normal;
+        font-weight: 420;
+        line-height: 22px;
+        color: rgba(255, 255, 255, 0.37);
+        background-blend-mode: luminosity, color-burn;
+        box-shadow: 1px 1.5px 4px 0px rgba(0, 0, 0, 0.10) inset, 1px 1.5px 4px 0px rgba(0, 0, 0, 0.08) inset, 0px -0.5px 1px 0px rgba(255, 255, 255, 0.25) inset, 0px -0.5px 1px 0px rgba(255, 255, 255, 0.30) inset;
+        &::placeholder {
+          color: rgba(255, 255, 255, 0.37);
+
+        }
+      }
+      input[type=password] {
+        font-size: 20px;
+        letter-spacing: 5px;
+        &::placeholder {
+          letter-spacing: initial;
+          font-size: 17px;
+        }
+      }
+      input[type=submit] {
+        display: flex;
+        width: 295px;
+        height: 44px;
+        padding: 0px 20px;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.96);
+        border: none;
+      }
+    }
+  }
+}

@@ -15,7 +15,7 @@ if (isset($_GET['p'])) {
 	}
 
 } else {
-	Pages::switchPage('home');
+	Pages::switchPage('login');
 }
 
 ?>
