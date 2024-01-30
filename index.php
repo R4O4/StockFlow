@@ -7,11 +7,15 @@ if (isset($_GET['p'])) {
 	switch ($p) {
 		case 'home':
 			Pages::switchPage('home');
-			break;
+		break;
+
+		case 'login-treatment':
+			Pages::switchPage('login-treatment');
+		break;
 
 		default:
 			Pages::switchPage('login');
-			break;
+		break;
 	}
 
 } else {
