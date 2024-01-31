@@ -9,10 +9,6 @@ if (isset($_GET['p'])) {
 			Pages::switchPage('home');
 		break;
 
-		case 'login-treatment':
-			Pages::switchPage('login-treatment');
-		break;
-
 		default:
 			Pages::switchPage('login');
 		break;

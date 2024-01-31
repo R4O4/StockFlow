@@ -12,9 +12,9 @@
         <img src="view/src/img/StockFlow.png" alt="StockFlow Logo" class="login-logo">
         <h1 class="login-title">Connexion</h1>
         <p>Connectez vous pour accéder à la gestion des stocks.</p>
-        <form action="index.php?p=login-treatment" method="post" class="login-form">
-            <input type="text" name="username" placeholder="Nom d'utilisateur" class="login-input" maxlength="20" required autocomplete="username">
-            <input type="password" name="password" placeholder="Mot de passe" class="login-input" maxlength="100" required autocomplete="current-password">
+        <form action="login-treatment.php" method="post" class="login-form">
+            <input type="text" name="username" placeholder="Nom d'utilisateur" class="login-input" maxlength="20" required autocomplete="username" id="username">
+            <input type="password" name="password" placeholder="Mot de passe" class="login-input" maxlength="100" required autocomplete="current-password" id="password">
             <input type="submit" value="Connexion" class="login-submit">
         </form>
     </section>
