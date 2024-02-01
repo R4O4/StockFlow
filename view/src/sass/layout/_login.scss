@@ -84,7 +84,7 @@
   }
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: $breakpoint-1) {
   .login-content {
     .login-container {
       width: 50%;

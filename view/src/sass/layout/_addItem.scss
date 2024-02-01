@@ -1,5 +1,3 @@
-@import "../utils/var";
-
 body {
   background: url("../img/background.webp");
   background-repeat: no-repeat;
@@ -7,19 +5,19 @@ body {
   background-position: center;
 }
 
-.item-content {
+.add-item-content {
   width: 100%;
   height: 100%;
   align-items: center;
   display: flex;
 
-  .item-container {
+  .add-item-container {
     width: 95%;
     height: 85%;
     margin: 0 auto;
     align-items: center;
 
-    .modify-item-form {
+    .add-item-form {
       display: flex;
       flex-direction: column;
 
@@ -185,10 +183,23 @@ body {
   }
 }
 
-@media screen and (min-width: $breakpoint-1) {
-  .item-content {
-    .item-container {
+@media screen and (min-width: 900px) {
+  .add-item-content {
+    .add-item-container {
       width: 50%;
+      height: 85%;
+      .add-item-form {
+        .modify-form-footer {
+          margin-top: 0;
+        }
+        .modify-form-body {
+          .quantity {
+            .quantity-selector {
+              min-width: 300px;
+            }
+          }
+        }
+      }
     }
   }
 }

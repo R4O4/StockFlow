@@ -75,6 +75,41 @@ body {
         background-blend-mode: luminosity, color-burn;
         box-shadow: 1px 1.5px 4px 0 rgba(0, 0, 0, 0.10) inset, 1px 1.5px 4px 0px rgba(0, 0, 0, 0.08) inset, 0px -0.5px 1px 0px rgba(255, 255, 255, 0.25) inset, 0px -0.5px 1px 0px rgba(255, 255, 255, 0.30) inset;
       }
+      .additem-page {
+        position: absolute;
+        right: 30px;
+        top: 30px;
+        height: 45px;
+        width: 45px;
+        border-radius: 50%;
+        border: none;
+        background: rgba(101, 101, 101, 0.30);
+        align-items: center;
+        transition-duration: $transition-duration;
+        &:hover {
+          cursor: pointer;
+          background: rgba(134, 134, 134, 0.56);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .home-content {
+    .home-container {
+      width: 50%;
+      height: 75%;
+      .search-bar {
+      }
+      h1 {
+        font-size: 2.5em;
+      }
+      .home-categories {
+        h2 {
+          font-size: 1.5em;
+        }
+      }
     }
   }
 }

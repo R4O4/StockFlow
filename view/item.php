@@ -19,7 +19,6 @@ switch ($_GET["subcat"]) {
 
 if (!empty($_SESSION['username']) && !empty($_GET["cat"]) && !empty($_GET['subcat'])) {
 	require 'model/config/db_config.php';
-	session_start();
 
 	try {
 		$mysqlClient = new PDO("mysql:host={$db_config['host']};dbname={$db_config['database']};charset=utf8", "{$db_config['user']}", "{$db_config['password']}");
@@ -59,7 +58,7 @@ if (!empty($_SESSION['username']) && !empty($_GET["cat"]) && !empty($_GET['subca
 		<section class="item-container glass">
         <form action="modify-item.php?id=<?php echo $id ?>" class="modify-item-form" method="post">
             <div class="modify-form-header">
-                <button class="previous-page" onclick="window.history.back()"><img src="view/src/img/arrow-left.svg"></button>
+                <button class="previous-page" onclick="window.location.href = 'index.php?p=home&cat=freezer'"><img src="view/src/img/arrow-left.svg"></button>
                 <input type="text" value="<?php echo $name ?>" id="name" name="name">
             </div>
             <div class="modify-form-body">

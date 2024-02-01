@@ -19,7 +19,6 @@ switch ($_GET["subcat"]) {
 
 if (!empty($_SESSION['username']) && !empty($_GET["cat"]) && !empty($_GET['subcat'])) {
 	require 'model/config/db_config.php';
-	session_start();
 
 	try {
 		$mysqlClient = new PDO("mysql:host={$db_config['host']};dbname={$db_config['database']};charset=utf8", "{$db_config['user']}", "{$db_config['password']}");
@@ -53,8 +52,9 @@ if (!empty($_SESSION['username']) && !empty($_GET["cat"]) && !empty($_GET['subca
 				<input type="text" name="search" placeholder="Rechercher" class="search-input" maxlength="20" required
 				       autocomplete="search" id="search">
 			</div>
-			<div class="category-items">
-				<h2>Contenu</h2>
+			<div class="category-items" >
+                <button class="previous-page" onclick="window.location.href = 'index.php?p=home&cat=freezer'"><img src="view/src/img/arrow-left.svg"></button>
+                <h2>Contenu</h2>
                 <?php
                     foreach ($res as $row) {
                         $category = $row['category'];
@@ -70,6 +70,8 @@ if (!empty($_SESSION['username']) && !empty($_GET["cat"]) && !empty($_GET['subca
 	</section>
 
 	<script src="view/src/js/nav.js"></script>
+    <script src="view/src/js/category.js"></script>
+
 	</body>
 	</html>
 	<?php

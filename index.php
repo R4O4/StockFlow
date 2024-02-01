@@ -17,6 +17,10 @@ if (isset($_GET['p'])) {
 			Pages::switchPage('item');
 		break;
 
+		case 'addItem':
+			Pages::switchPage('addItem');
+		break;
+
 		default:
 			Pages::switchPage('login');
 		break;
