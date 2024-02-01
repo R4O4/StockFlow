@@ -9,6 +9,14 @@ if (isset($_GET['p'])) {
 			Pages::switchPage('home');
 		break;
 
+		case 'category':
+			Pages::switchPage('category');
+		break;
+
+		case 'item':
+			Pages::switchPage('item');
+		break;
+
 		default:
 			Pages::switchPage('login');
 		break;

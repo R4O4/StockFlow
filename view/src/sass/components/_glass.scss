@@ -1,9 +1,7 @@
 .glass {
   border-radius: 46px;
   border: 1px solid var(--windows-stroke-glass-specular, rgba(255, 255, 255, 0.40));
-
-  background: var(--Windows-Glass, rgba(128, 128, 128, 0.30));
+  background: var(--Windows-Glass, rgba(128, 128, 128, 0.2));
   background-blend-mode: luminosity;
-  /* Blur */
   backdrop-filter: blur(50px);
 }

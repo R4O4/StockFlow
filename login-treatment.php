@@ -1,9 +1,8 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 require 'model/config/db_config.php';
+
+session_start();
+
 
 try {
 	$mysqlClient = new PDO("mysql:host={$db_config['host']};dbname={$db_config['database']};charset=utf8", "{$db_config['user']}", "{$db_config['password']}");
@@ -11,9 +10,6 @@ try {
 	die('Erreur : ' . $e->getMessage());
 	// Mettre page d'erreur
 };
-
-
-session_start();
 
 if (isset($_POST['username']) && isset($_POST['password'])) {
 	function validate($data)
@@ -48,7 +44,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 				echo "Logged in!";
 				$_SESSION['username'] = $row['username'];
 				$_SESSION['id'] = $row['id'];
-				header("Location: admin_home.php");
+				header("Location: index.php?p=home");
 				exit();
 			} else {
 				echo "invalid email or password";
