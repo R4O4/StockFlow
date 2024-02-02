@@ -32,7 +32,7 @@ nav {
 
 @media screen and (min-width: $breakpoint-1) {
   nav {
-    width: max-content;
+    width: -webkit-max-content;
     position: absolute;
     left: -100px;
     height: 100%;

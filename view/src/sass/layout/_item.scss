@@ -89,6 +89,10 @@ body {
             font-size: 0.7em;
             background: linear-gradient(0deg, rgba(94, 94, 94, 0.21) 0%, rgba(94, 94, 94, 0.29) 100%), rgba(255, 255, 255, 0.09);
             background-blend-mode: color-dodge, normal;
+            -webkit-appearance: none;
+          }
+          select {
+            
           }
           input[type=date] {
             &::-webkit-calendar-picker-indicator {
@@ -189,6 +193,19 @@ body {
   .item-content {
     .item-container {
       width: 50%;
+      .modify-item-form {
+        .modify-form-body {
+          gap: 20px;
+          .quantity {
+            .quantity-selector {
+              min-width: 300px;
+            }
+            .quantity-p {
+              left: 158px;
+            }
+          }
+        }
+      }
     }
   }
 }

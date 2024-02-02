@@ -1,8 +1,4 @@
 <?php
-// show error
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 session_start();
 
 if (!empty($_SESSION['username'])) {
@@ -39,7 +35,7 @@ if (!empty($_SESSION['username'])) {
 	$statement->bindParam(':place', $place, PDO::PARAM_STR);
 	$statement->bindParam(':id', $id, PDO::PARAM_STR);
 	$statement->execute();
-	header('Location: index.php?p=home');
+	header('Location: index.php?p=home&cat=freezer');
 } else {
 	//header('Location: index.php');
 	echo "error";

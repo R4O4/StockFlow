@@ -4,16 +4,23 @@ session_start();
 switch ($_GET["subcat"]) {
     case "viandes_rouge":
         $subCat = "Viandes rouge";
-        break;
+    break;
     case "volailles":
         $subCat = "Volailles";
-        break;
+    break;
     case "poissons":
         $subCat = "Poissons";
-        break;
+    break;
     case "autre":
         $subCat = "Autre";
-        break;
+    break;
+
+    case "porc":
+        $subCat = "Porc";
+    break;
+    case "tous":
+        $subCat = "Tous";
+    break;
 
 }
 
@@ -27,12 +34,20 @@ if (!empty($_SESSION['username']) && !empty($_GET["cat"]) && !empty($_GET['subca
 		// Mettre page d'erreur
 	};
 
-	$sqlQuery = "SELECT * FROM stock WHERE sub_category = :subCat AND category = :cat";
-	$statement = $mysqlClient->prepare($sqlQuery);
-	$statement->bindParam(':subCat', $_GET['subcat'], PDO::PARAM_STR);
-	$statement->bindParam(':cat', $_GET['cat'], PDO::PARAM_STR);
-	$statement->execute();
-	$res = $statement->fetchAll();
+    if ($_GET["subcat"] = "tous") {
+	    $sqlQuery = "SELECT * FROM stock WHERE category = :cat";
+	    $statement = $mysqlClient->prepare($sqlQuery);
+	    $statement->bindParam(':cat', $_GET['cat'], PDO::PARAM_STR);
+	    $statement->execute();
+	    $res = $statement->fetchAll();
+    } else {
+	    $sqlQuery = "SELECT * FROM stock WHERE sub_category = :subCat AND category = :cat";
+	    $statement = $mysqlClient->prepare($sqlQuery);
+	    $statement->bindParam(':subCat', $_GET['subcat'], PDO::PARAM_STR);
+	    $statement->bindParam(':cat', $_GET['cat'], PDO::PARAM_STR);
+	    $statement->execute();
+	    $res = $statement->fetchAll();
+    }
 
     ?>
 	<html lang="fr">
@@ -46,14 +61,18 @@ if (!empty($_SESSION['username']) && !empty($_GET["cat"]) && !empty($_GET['subca
 	<body>
 	<section class="category-content">
 		<section class="category-container glass">
-			<h1><?php echo $subCat ?></h1>
+            <div class="category-container-header">
+                <button class="previous-page" onclick="window.location.href = 'index.php?p=home&cat=freezer'"><img src="view/src/img/arrow-left.svg"></button>
+                <h1><?php echo $subCat ?></h1>
+                <button class="additem-page" onclick="window.location.href = 'index.php?p=addItem'"><img src="view/src/img/plus.svg"></button>
+            </div>
+
 			<div class="search-bar">
 				<img src="view/src/img/search.svg" alt="search icon" class="search-icon">
 				<input type="text" name="search" placeholder="Rechercher" class="search-input" maxlength="20" required
 				       autocomplete="search" id="search">
 			</div>
 			<div class="category-items" >
-                <button class="previous-page" onclick="window.location.href = 'index.php?p=home&cat=freezer'"><img src="view/src/img/arrow-left.svg"></button>
                 <h2>Contenu</h2>
                 <?php
                     foreach ($res as $row) {

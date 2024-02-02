@@ -1,3 +1,10 @@
+<?php
+if (!empty($_SESSION['username'])) {
+    require 'model/config/db_config.php';
+    header('Location: index.php?p=home&cat=freezer');
+}
+?>
+
 <html lang="fr">
 <head>
 	<?php include "components/head.php" ?>

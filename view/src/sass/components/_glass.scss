@@ -4,4 +4,5 @@
   background: var(--Windows-Glass, rgba(128, 128, 128, 0.2));
   background-blend-mode: luminosity;
   backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
 }

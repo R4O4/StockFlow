@@ -47,7 +47,7 @@ nav .active {
 
 @media screen and (min-width: 900px) {
   nav {
-    width: max-content;
+    width: -webkit-max-content;
     position: absolute;
     left: -100px;
     height: 100%;
@@ -149,6 +149,7 @@ nav .active {
   background: var(--Windows-Glass, rgba(128, 128, 128, 0.2));
   background-blend-mode: luminosity;
   backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
 }
 
 body {
@@ -169,6 +170,25 @@ body {
   height: 85%;
   margin: 0 auto;
   align-items: center;
+}
+.home-content .home-container .home-container-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.home-content .home-container .home-container-header h1 {
+  font-size: 2em;
+  font-weight: 500;
+  color: #fff;
+  text-transform: capitalize;
+  margin: 30px auto;
+  text-align: center;
+  background: none;
+  width: fit-content;
+}
+.home-content .home-container .home-container-header .additem-page {
+  position: relative;
+  right: 20px;
 }
 .home-content .home-container .search-bar {
   display: flex;
@@ -194,20 +214,16 @@ body {
   text-transform: capitalize;
   outline: none;
 }
-.home-content .home-container h1 {
-  font-size: 2em;
-  font-weight: 500;
-  color: #fff;
-  text-transform: capitalize;
-  margin: 30px auto;
-  text-align: center;
-  background: none;
-}
 .home-content .home-container .home-categories {
+  overflow-y: scroll;
+  max-height: 400px;
   display: flex;
   flex-direction: column;
   width: 95%;
   margin: 0 auto;
+}
+.home-content .home-container .home-categories::-webkit-scrollbar {
+  display: none;
 }
 .home-content .home-container .home-categories h2 {
   font-size: 1.3em;
@@ -225,26 +241,10 @@ body {
   text-decoration: none;
   font-size: 1.2em;
   justify-content: space-between;
-  height: 50px;
+  min-height: 50px;
   background: rgba(0, 0, 0, 0.3);
   background-blend-mode: luminosity, color-burn;
   box-shadow: 1px 1.5px 4px 0 rgba(0, 0, 0, 0.1) inset, 1px 1.5px 4px 0px rgba(0, 0, 0, 0.08) inset, 0px -0.5px 1px 0px rgba(255, 255, 255, 0.25) inset, 0px -0.5px 1px 0px rgba(255, 255, 255, 0.3) inset;
-}
-.home-content .home-container .home-categories .additem-page {
-  position: absolute;
-  right: 30px;
-  top: 30px;
-  height: 45px;
-  width: 45px;
-  border-radius: 50%;
-  border: none;
-  background: rgba(101, 101, 101, 0.3);
-  align-items: center;
-  transition-duration: 400ms;
-}
-.home-content .home-container .home-categories .additem-page:hover {
-  cursor: pointer;
-  background: rgba(134, 134, 134, 0.56);
 }
 
 @media screen and (min-width: 1000px) {
@@ -255,8 +255,14 @@ body {
   .home-content .home-container h1 {
     font-size: 2.5em;
   }
+  .home-content .home-container .home-categories {
+    max-height: 320px;
+  }
   .home-content .home-container .home-categories h2 {
     font-size: 1.5em;
+  }
+  .home-content .home-container .home-categories a {
+    min-height: 50px;
   }
 }
 body {
@@ -277,6 +283,29 @@ body {
   height: 85%;
   margin: 0 auto;
   align-items: center;
+}
+.category-content .category-container .category-container-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.category-content .category-container .category-container-header h1 {
+  font-size: 2em;
+  font-weight: 500;
+  color: #fff;
+  text-transform: capitalize;
+  margin: 30px auto;
+  text-align: center;
+  background: none;
+  width: fit-content;
+}
+.category-content .category-container .category-container-header .additem-page {
+  position: relative;
+  right: 20px;
+}
+.category-content .category-container .category-container-header .previous-page {
+  position: relative;
+  left: 20px;
 }
 .category-content .category-container .search-bar {
   display: flex;
@@ -317,7 +346,10 @@ body {
   width: 95%;
   margin: 0 auto;
   overflow-y: scroll;
-  height: 50%;
+  height: 65%;
+}
+.category-content .category-container .category-items::-webkit-scrollbar {
+  display: none;
 }
 .category-content .category-container .category-items h2 {
   font-size: 1.3em;
@@ -336,25 +368,18 @@ body {
   font-size: 1.2em;
   justify-content: space-between;
   height: 50px;
+  min-height: 50px;
   background: rgba(0, 0, 0, 0.3);
   background-blend-mode: luminosity, color-burn;
   box-shadow: 1px 1.5px 4px 0 rgba(0, 0, 0, 0.1) inset, 1px 1.5px 4px 0px rgba(0, 0, 0, 0.08) inset, 0px -0.5px 1px 0px rgba(255, 255, 255, 0.25) inset, 0px -0.5px 1px 0px rgba(255, 255, 255, 0.3) inset;
-}
-.category-content .category-container .category-items .previous-page {
-  position: absolute;
-  left: 30px;
-  top: 30px;
-  height: 45px;
-  width: 45px;
-  border-radius: 50%;
-  border: none;
-  background: rgba(101, 101, 101, 0.3);
-  align-items: center;
 }
 
 @media screen and (min-width: 900px) {
   .category-content .category-container {
     width: 50%;
+  }
+  .category-content .category-container .category-items {
+    height: 60%;
   }
 }
 body {
@@ -446,6 +471,7 @@ body {
   font-size: 0.7em;
   background: linear-gradient(0deg, rgba(94, 94, 94, 0.21) 0%, rgba(94, 94, 94, 0.29) 100%), rgba(255, 255, 255, 0.09);
   background-blend-mode: color-dodge, normal;
+  -webkit-appearance: none;
 }
 .item-content .item-container .modify-item-form .modify-form-body div input[type=date]::-webkit-calendar-picker-indicator {
   filter: invert(1);
@@ -531,6 +557,15 @@ body {
 @media screen and (min-width: 900px) {
   .item-content .item-container {
     width: 50%;
+  }
+  .item-content .item-container .modify-item-form .modify-form-body {
+    gap: 20px;
+  }
+  .item-content .item-container .modify-item-form .modify-form-body .quantity .quantity-selector {
+    min-width: 300px;
+  }
+  .item-content .item-container .modify-item-form .modify-form-body .quantity .quantity-p {
+    left: 158px;
   }
 }
 body {
@@ -715,6 +750,32 @@ body {
   .add-item-content .add-item-container .add-item-form .modify-form-body .quantity .quantity-selector {
     min-width: 300px;
   }
+}
+.additem-page {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(101, 101, 101, 0.3);
+  align-items: center;
+  transition-duration: 400ms;
+}
+.additem-page:hover {
+  cursor: pointer;
+  background: rgba(134, 134, 134, 0.56);
+}
+
+.previous-page {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(101, 101, 101, 0.3);
+  align-items: center;
+}
+.previous-page:hover {
+  cursor: pointer;
+  background: rgba(134, 134, 134, 0.56);
 }
 
 /*# sourceMappingURL=style.css.map */

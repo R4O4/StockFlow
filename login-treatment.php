@@ -44,7 +44,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 				echo "Logged in!";
 				$_SESSION['username'] = $row['username'];
 				$_SESSION['id'] = $row['id'];
-				header("Location: index.php?p=home");
+				header("Location: index.php?p=home&cat=freezer");
 				exit();
 			} else {
 				echo "invalid email or password";

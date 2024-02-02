@@ -40,6 +40,7 @@ if (!empty($_SESSION['username'])) {
 						<select name="sub-category" id="sub-category" class="subcat-selector">
 							<option value="viandes_rouge">Viandes rouge</option>
 							<option value="volailles">Volailles</option>
+                            <option value="porc">Porc</option>
 							<option value="poissons">Poissons</option>
 							<option value="autre">Autre</option>
 						</select>

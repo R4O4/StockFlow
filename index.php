@@ -1,6 +1,5 @@
 <?php
-session_start();
-include "controller/pages.php";
+require "controller/Pages.php";
 
 if (isset($_GET['p'])) {
 	$p = $_GET['p'];

@@ -1,0 +1,27 @@
+.additem-page {
+
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(101, 101, 101, 0.30);
+  align-items: center;
+  transition-duration: $transition-duration;
+  &:hover {
+    cursor: pointer;
+    background: rgba(134, 134, 134, 0.56);
+  }
+}
+
+.previous-page {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(101, 101, 101, 0.30);
+  align-items: center;
+  &:hover {
+    cursor: pointer;
+    background: rgba(134, 134, 134, 0.56);
+  }
+}

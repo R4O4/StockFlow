@@ -15,6 +15,29 @@ body {
     height: 85%;
     margin: 0 auto;
     align-items: center;
+    .category-container-header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      h1 {
+        font-size: 2em;
+        font-weight: 500;
+        color: #fff;
+        text-transform: capitalize;
+        margin: 30px auto;
+        text-align: center;
+        background: none;
+        width: fit-content;
+      }
+      .additem-page {
+        position: relative;
+        right: 20px;
+      }
+      .previous-page {
+        position: relative;
+        left: 20px;
+      }
+    }
     .search-bar {
       display: flex;
       width: 90%;
@@ -55,7 +78,10 @@ body {
       width: 95%;
       margin: 0 auto;
       overflow-y: scroll;
-      height: 50%;
+      height: 65%;
+      &::-webkit-scrollbar {
+        display: none;
+      }
       h2 {
         font-size: 1.3em;
         font-weight: 500;
@@ -73,20 +99,10 @@ body {
         font-size: 1.2em;
         justify-content: space-between;
         height: 50px;
+        min-height: 50px;
         background: rgba(0, 0, 0, 0.30);
         background-blend-mode: luminosity, color-burn;
         box-shadow: 1px 1.5px 4px 0 rgba(0, 0, 0, 0.10) inset, 1px 1.5px 4px 0px rgba(0, 0, 0, 0.08) inset, 0px -0.5px 1px 0px rgba(255, 255, 255, 0.25) inset, 0px -0.5px 1px 0px rgba(255, 255, 255, 0.30) inset;
-      }
-      .previous-page {
-        position: absolute;
-        left: 30px;
-        top: 30px;
-        height: 45px;
-        width: 45px;
-        border-radius: 50%;
-        border: none;
-        background: rgba(101, 101, 101, 0.30);
-        align-items: center;
       }
     }
   }
@@ -96,6 +112,9 @@ body {
   .category-content {
     .category-container {
       width: 50%;
+      .category-items {
+        height: 60%;
+      }
     }
   }
 }
